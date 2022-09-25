@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CalcadoFormComponent } from './calcado-form/calcado-form.component';
+import { CalcadoFormComponent } from './containers/calcado-form/calcado-form.component';
 
-import { CalcadosComponent } from './calcados/calcados.component';
+import { CalcadosComponent } from './containers/calcados/calcados.component';
 
 const routes: Routes = [
   {

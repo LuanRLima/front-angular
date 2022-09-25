@@ -1,6 +1,6 @@
-import { CalcadosService } from './../service/calcados.service';
+import { CalcadosService } from '../../service/calcados.service';
 import { Component, OnInit } from '@angular/core';
-import { Calcado } from '../model/calcado';
+import { Calcado } from '../../model/calcado';
 import { catchError, Observable, of } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
@@ -41,6 +41,9 @@ export class CalcadosComponent implements OnInit {
 
   ngOnInit(): void {
 
+  }
+  onAdd() {
+    this.router.navigate(['new'], { relativeTo: this.route });
   }
 
 

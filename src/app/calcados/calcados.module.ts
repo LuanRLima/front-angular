@@ -4,10 +4,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppMaterialModule } from '../shared/app-material/app-material.module';
 import { SharedModule } from '../shared/shared.module';
-import { CalcadoFormComponent } from './calcado-form/calcado-form.component';
+import { CalcadoFormComponent } from './containers/calcado-form/calcado-form.component';
 import { CalcadosRoutingModule } from './calcados-routing.module';
-import { CalcadosComponent } from './calcados/calcados.component';
-import { CalcadoListComponent } from './calcado-list/calcado-list.component';
+import { CalcadosComponent } from './containers/calcados/calcados.component';
+import { CalcadoListComponent } from './components/calcado-list/calcado-list.component';
 
 
 

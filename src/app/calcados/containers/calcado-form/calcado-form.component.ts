@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, NonNullableFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-import { CalcadosService } from '../service/calcados.service';
+import { CalcadosService } from '../../service/calcados.service';
 
 @Component({
   selector: 'app-calcado-form',

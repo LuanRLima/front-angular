@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Calcado } from '../model/calcado';
+import { Calcado } from '../../model/calcado';
 
 @Component({
   selector: 'app-calcado-list',
@@ -10,19 +10,17 @@ import { Calcado } from '../model/calcado';
 export class CalcadoListComponent implements OnInit {
 
   @Input() calcados: Calcado[] = [];
+  @Output() add = new EventEmitter(false);
 
   readonly displayedColumns = ["nome"
     , "marca", "cor", "tamanho", "preco", "quantidadeEmEstoque", "categoria"
     , "dataDeCadastro", "descricao", "actions"];
-  constructor(
-    private router: Router,
-    private route: ActivatedRoute
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
   onAdd() {
-    this.router.navigate(['new'], { relativeTo: this.route });
+    this.add.emit(true);
   }
 }
