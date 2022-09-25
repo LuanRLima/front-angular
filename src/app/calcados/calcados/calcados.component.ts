@@ -1,28 +1,9 @@
-// import { Calcado } from './../model/calcado';
-// import { Component, OnInit } from '@angular/core';
-
-// @Component({
-//   selector: 'app-calcados',
-//   templateUrl: './calcados.component.html',
-//   styleUrls: ['./calcados.component.scss']
-// })
-// export class CalcadosComponent implements OnInit {
-
-//   calcados: Calcado[] = [
-//     { _id: 1, nome: 'Tênis Nike', marca: 'Nike', cor: 'Preto', tamanho: '40', preco: 200, quantidadeEmEstoque: 10, categoria: 'Tênis', descricao: 'Tênis Nike Air Max 90', dataDeCriacao: new Date() },
-//   ];
-
-//   displayedColumns = ["nome", "marca", "cor, tamanho", "preco", "quantidadeEmEstoque", "categoria", "dataDeCadastro", "descricao"];
-
-//   constructor() { }
-
-//   ngOnInit(): void {
-//   }
-
-// }
-
+import { CalcadosService } from './../service/calcados.service';
 import { Component, OnInit } from '@angular/core';
 import { Calcado } from '../model/calcado';
+import { catchError, Observable, of } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
 
 @Component({
   selector: 'app-calcados',
@@ -31,20 +12,34 @@ import { Calcado } from '../model/calcado';
 })
 export class CalcadosComponent implements OnInit {
 
-  calcados: Calcado[] = [
-    {
-      _id: 1, nome: 'Tênis Nike', marca: 'Nike', cor: 'Preto', tamanho: '40', preco: 200,
-      quantidadeEmEstoque: 10, categoria: 'Tênis', descricao: 'Tênis Nike Air Max 90', dataDeCriacao: new Date()
-    },
-  ];
-  displayedColumns = ["_id", "nome"
+  calcados$: Observable<Calcado[]>;
+  displayedColumns = ["nome"
     , "marca", "cor", "tamanho", "preco", "quantidadeEmEstoque", "categoria"
     , "dataDeCadastro", "descricao"
   ];
 
-  constructor() {
-    // this.calcados = [];
+
+  constructor(
+    private calcadosService: CalcadosService,
+    public dialog: MatDialog
+  ) {
+    this.calcados$ = this.calcadosService.list().
+      pipe(
+        catchError(err => {
+          this.onError('Erro ao carregar os dados');
+          return of([]);
+        }
+        )
+      );
+
   }
+  onError(errorMsg: string) {
+    this.dialog.open(ErrorDialogComponent, {
+      data: errorMsg
+    });
+  }
+
+
 
   ngOnInit(): void {
 

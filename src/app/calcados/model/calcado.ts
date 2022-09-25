@@ -1,6 +1,6 @@
 export interface Calcado {
 
-  _id: Number;
+  id?: Number;
   nome: String;
   marca: String;
   cor: String;
