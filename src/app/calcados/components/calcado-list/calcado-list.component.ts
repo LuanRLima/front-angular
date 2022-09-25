@@ -11,8 +11,9 @@ export class CalcadoListComponent implements OnInit {
 
   @Input() calcados: Calcado[] = [];
   @Output() add = new EventEmitter(false);
+  @Output() edit = new EventEmitter(false);
 
-  readonly displayedColumns = ["nome"
+  readonly displayedColumns = ["id", "nome"
     , "marca", "cor", "tamanho", "preco", "quantidadeEmEstoque", "categoria"
     , "dataDeCadastro", "descricao", "actions"];
   constructor() { }
@@ -22,5 +23,9 @@ export class CalcadoListComponent implements OnInit {
 
   onAdd() {
     this.add.emit(true);
+  }
+
+  onEdit(calcado: Calcado) {
+    this.edit.emit(calcado);
   }
 }

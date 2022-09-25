@@ -12,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./calcados.component.scss']
 })
 export class CalcadosComponent implements OnInit {
+  [x: string]: any;
 
   calcados$: Observable<Calcado[]>;
 
@@ -44,6 +45,9 @@ export class CalcadosComponent implements OnInit {
   }
   onAdd() {
     this.router.navigate(['new'], { relativeTo: this.route });
+  }
+  onEdit(calcado: Calcado) {
+    this.router.navigate(['edit', calcado.id], { relativeTo: this.route });
   }
 
 

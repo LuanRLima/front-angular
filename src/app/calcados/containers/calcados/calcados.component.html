@@ -4,7 +4,7 @@
   </mat-toolbar>
 
   <div class="column-flex mat-elevation-z8">
-    <app-calcado-list *ngIf="calcados$ | async as calcados; else loading" [calcados]="calcados" (add)="onAdd()">
+    <app-calcado-list *ngIf="calcados$ | async as calcados; else loading" [calcados]="calcados" (add)="onAdd()" (edit)="onEdit($event)">
     </app-calcado-list>
 
 

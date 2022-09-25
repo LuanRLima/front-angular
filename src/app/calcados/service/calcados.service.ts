@@ -25,4 +25,8 @@ export class CalcadosService {
     return this.httpClient.post<Calcado>(this.API, records);
   }
 
+  findById(id: string): Observable<Calcado> {
+    return this.httpClient.get<Calcado>(`${this.API}/${id}`);
+  }
+
 }
