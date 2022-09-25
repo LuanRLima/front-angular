@@ -1,0 +1,45 @@
+<mat-card>
+  <mat-toolbar color="primary">
+    Detalhes Calcaçados
+  </mat-toolbar>
+  <mat-card-content class="min-width">
+    <form [formGroup]="form">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Nome" formControlName="nome">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Marca" formControlName="marca">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Cor" formControlName="cor">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Tamanho" formControlName="tamanho">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Preco" formControlName="preco">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Quantidade" formControlName="quantidadeEmEstoque">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Categoria" formControlName="categoria">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Data de Cadastro" formControlName="dataDeCadastro">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Descricao" formControlName="descricao">
+      </mat-form-field>
+    </form>
+
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="onSubmit()">Salvar</button>
+    <button mat-raised-button color="warn" (click)="onCancel()">Cancelar</button>
+  </mat-card-actions>
+  <mat-card-footer>
+    Footer
+  </mat-card-footer>
+</mat-card>

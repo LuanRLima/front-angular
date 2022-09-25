@@ -4,6 +4,7 @@ import { Calcado } from '../model/calcado';
 import { catchError, Observable, of } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-calcados',
@@ -15,13 +16,14 @@ export class CalcadosComponent implements OnInit {
   calcados$: Observable<Calcado[]>;
   displayedColumns = ["nome"
     , "marca", "cor", "tamanho", "preco", "quantidadeEmEstoque", "categoria"
-    , "dataDeCadastro", "descricao"
-  ];
+    , "dataDeCadastro", "descricao", "actions"];
 
 
   constructor(
     private calcadosService: CalcadosService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private router: Router,
+    private route: ActivatedRoute
   ) {
     this.calcados$ = this.calcadosService.list().
       pipe(
@@ -45,4 +47,7 @@ export class CalcadosComponent implements OnInit {
 
   }
 
+  onAdd() {
+    this.router.navigate(['new'], { relativeTo: this.route });
+  }
 }

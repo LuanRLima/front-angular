@@ -9,6 +9,6 @@ export interface Calcado {
   quantidadeEmEstoque: Number;
   categoria: String;
   descricao: String;
-  dataDeCriacao: Date;
+  dataDeCriacao?: Date;
 }
 

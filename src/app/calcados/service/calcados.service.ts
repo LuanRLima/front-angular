@@ -10,15 +10,19 @@ export class CalcadosService {
 
   constructor(private httpClient: HttpClient) { }
 
-  private readonly API = 'http://localhost:8080/api/calcado';
+  private readonly API = 'api/calcados';
 
   list(): Observable<Calcado[]> {
     return this.httpClient.get<Calcado[]>(this.API)
       .pipe(
         first(),
-        delay(15000),
+        delay(1000),
         tap(calcados => console.log(calcados))
       );
+  }
+
+  save(records: Partial<Calcado>): Observable<Calcado> {
+    return this.httpClient.post<Calcado>(this.API, records);
   }
 
 }
