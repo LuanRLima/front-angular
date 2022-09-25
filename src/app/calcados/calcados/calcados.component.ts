@@ -14,10 +14,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CalcadosComponent implements OnInit {
 
   calcados$: Observable<Calcado[]>;
-  displayedColumns = ["nome"
-    , "marca", "cor", "tamanho", "preco", "quantidadeEmEstoque", "categoria"
-    , "dataDeCadastro", "descricao", "actions"];
-
 
   constructor(
     private calcadosService: CalcadosService,
@@ -47,7 +43,5 @@ export class CalcadosComponent implements OnInit {
 
   }
 
-  onAdd() {
-    this.router.navigate(['new'], { relativeTo: this.route });
-  }
+
 }

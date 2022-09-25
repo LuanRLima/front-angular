@@ -7,6 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { CalcadoFormComponent } from './calcado-form/calcado-form.component';
 import { CalcadosRoutingModule } from './calcados-routing.module';
 import { CalcadosComponent } from './calcados/calcados.component';
+import { CalcadoListComponent } from './calcado-list/calcado-list.component';
 
 
 
@@ -14,7 +15,8 @@ import { CalcadosComponent } from './calcados/calcados.component';
 @NgModule({
   declarations: [
     CalcadosComponent,
-    CalcadoFormComponent
+    CalcadoFormComponent,
+    CalcadoListComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,79 @@
+<mat-table [dataSource]="calcados" class="mat-elevation-z8">
+
+  <!-- Name Column -->
+  <!-- <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> id </mat-header-cell>
+      <mat-cell *matCellDef="let calcado"> {{ calcado._id }} </mat-cell>
+    </ng-container> -->
+
+  <!-- nome Column -->
+  <ng-container matColumnDef="nome">
+    <mat-header-cell *matHeaderCellDef> Categoria </mat-header-cell>
+    <mat-cell *matCellDef="let calcado"> {{ calcado.nome }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="marca">
+    <mat-header-cell *matHeaderCellDef> Marca </mat-header-cell>
+    <mat-cell *matCellDef="let calcado"> {{ calcado.marca }} </mat-cell>
+  </ng-container>
+
+  <!-- nome Column -->
+  <ng-container matColumnDef="cor">
+    <mat-header-cell *matHeaderCellDef> Cor </mat-header-cell>
+    <mat-cell *matCellDef="let calcado"> {{ calcado.cor }} </mat-cell>
+  </ng-container>
+  <!-- nome Column -->
+  <ng-container matColumnDef="tamanho">
+    <mat-header-cell *matHeaderCellDef> Tamanho </mat-header-cell>
+    <mat-cell *matCellDef="let calcado"> {{ calcado.tamanho }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="preco">
+    <mat-header-cell *matHeaderCellDef> Preco </mat-header-cell>
+    <mat-cell *matCellDef="let calcado"> {{ calcado.preco }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="quantidadeEmEstoque">
+    <mat-header-cell *matHeaderCellDef> Quantidade-Estoque </mat-header-cell>
+    <mat-cell *matCellDef="let calcado"> {{ calcado.quantidadeEmEstoque }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="categoria">
+    <mat-header-cell *matHeaderCellDef> Categoria </mat-header-cell>
+    <mat-cell *matCellDef="let calcado"> {{ calcado.categoria }} <mat-icon aria-hidden="false" aria-label="Categoria do Calcado">{{ calcado.categoria | category }}</mat-icon>
+    </mat-cell>
+
+  </ng-container>
+
+  <ng-container matColumnDef="dataDeCadastro">
+    <mat-header-cell *matHeaderCellDef> Data-de-Cadastro </mat-header-cell>
+    <mat-cell *matCellDef="let calcado"> {{ calcado.dataDeCadastro }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="descricao">
+    <mat-header-cell *matHeaderCellDef> Descricao </mat-header-cell>
+    <mat-cell *matCellDef="let calcado"> {{ calcado.descricao }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef class="action-column-header">
+      <button mat-mini-fab color="accent" aria-label="Adicionar um calçado">
+        <mat-icon (click)="onAdd()">add</mat-icon>
+      </button>
+    </mat-header-cell>
+    <mat-cell *matCellDef="let calcado" class="action-column">
+      <button mat-icon-button color="primary" arial-label="Editar Calçado">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" arial-label="Editar Calçado">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+
+
+  </ng-container>
+
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

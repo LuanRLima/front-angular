@@ -2,94 +2,18 @@
   <mat-toolbar color="primary">
     <span>Calcados</span>
   </mat-toolbar>
-  <div *ngIf="calcados$ | async as calcados; else loading">
 
-    <table mat-table [dataSource]="calcados" class="mat-elevation-z8">
-
-      <!-- Name Column -->
-      <!-- <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef> id </th>
-      <td mat-cell *matCellDef="let calcado"> {{ calcado._id }} </td>
-    </ng-container> -->
-
-      <!-- nome Column -->
-      <ng-container matColumnDef="nome">
-        <th mat-header-cell *matHeaderCellDef> Categoria </th>
-        <td mat-cell *matCellDef="let calcado"> {{ calcado.nome }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="marca">
-        <th mat-header-cell *matHeaderCellDef> Marca </th>
-        <td mat-cell *matCellDef="let calcado"> {{ calcado.marca }} </td>
-      </ng-container>
-
-      <!-- nome Column -->
-      <ng-container matColumnDef="cor">
-        <th mat-header-cell *matHeaderCellDef> Cor </th>
-        <td mat-cell *matCellDef="let calcado"> {{ calcado.cor }} </td>
-      </ng-container>
-      <!-- nome Column -->
-      <ng-container matColumnDef="tamanho">
-        <th mat-header-cell *matHeaderCellDef> Tamanho </th>
-        <td mat-cell *matCellDef="let calcado"> {{ calcado.tamanho }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="preco">
-        <th mat-header-cell *matHeaderCellDef> Preco </th>
-        <td mat-cell *matCellDef="let calcado"> {{ calcado.preco }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="quantidadeEmEstoque">
-        <th mat-header-cell *matHeaderCellDef> Quantidade-Estoque </th>
-        <td mat-cell *matCellDef="let calcado"> {{ calcado.quantidadeEmEstoque }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="categoria">
-        <th mat-header-cell *matHeaderCellDef> Categoria </th>
-        <td mat-cell *matCellDef="let calcado"> {{ calcado.categoria }} <mat-icon aria-hidden="false" aria-label="Categoria do Calcado">{{ calcado.categoria | category }}</mat-icon>
-        </td>
-
-      </ng-container>
-
-      <ng-container matColumnDef="dataDeCadastro">
-        <th mat-header-cell *matHeaderCellDef> Data-de-Cadastro </th>
-        <td mat-cell *matCellDef="let calcado"> {{ calcado.dataDeCadastro }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="descricao">
-        <th mat-header-cell *matHeaderCellDef> Descricao </th>
-        <td mat-cell *matCellDef="let calcado"> {{ calcado.descricao }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="actions">
-        <mat-header-cell *matHeaderCellDef>
-          <button mat-mini-fab color="accent" aria-label="Adicionar um calçado">
-            <mat-icon (click)="onAdd()">add</mat-icon>
-          </button>
-        </mat-header-cell>
-        <mat-cell *matCellDef="let calcado">
-          <button mat-icon-button color="primary" arial-label="Editar Calçado">
-            <mat-icon>edit</mat-icon>
-          </button>
-          <button mat-icon-button color="warn" arial-label="Editar Calçado">
-            <mat-icon>delete</mat-icon>
-          </button>
-        </mat-cell>
+  <div class="column-flex mat-elevation-z8">
+    <app-calcado-list *ngIf="calcados$ | async as calcados; else loading" [calcados]="calcados">
+    </app-calcado-list>
 
 
-      </ng-container>
-
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
+    <ng-template #loading>
+      <div class="loading-spinner">
+        <mat-spinner></mat-spinner>
+      </div>
+    </ng-template>
   </div>
-
-  <ng-template #loading>
-    <div class="loading-spinner">
-      <mat-spinner></mat-spinner>
-    </div>
-  </ng-template>
 
 
 </mat-card>
