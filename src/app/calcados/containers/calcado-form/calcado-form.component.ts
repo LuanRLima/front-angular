@@ -1,7 +1,9 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, NonNullableFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { NonNullableFormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
+import { Calcado } from '../../model/calcado';
 
 import { CalcadosService } from '../../service/calcados.service';
 
@@ -14,6 +16,7 @@ export class CalcadoFormComponent implements OnInit {
 
 
   form = this.formBuilder.group({
+    id: [0],
     nome: [''],
     marca: [''],
     cor: [''],
@@ -30,14 +33,28 @@ export class CalcadoFormComponent implements OnInit {
     private formBuilder: NonNullableFormBuilder,
     private service: CalcadosService,
     private snackBar: MatSnackBar,
-    private location: Location
+    private location: Location,
+    private route: ActivatedRoute
   ) {
 
   }
 
   ngOnInit(): void {
-    this.form.value.preco = 0;
+    const calcado: Calcado = this.route.snapshot.data['calcado'];
+    this.form.setValue({
+      id: calcado.id,
+      nome: calcado.nome,
+      marca: calcado.marca,
+      cor: calcado.cor,
+      tamanho: calcado.tamanho,
+      preco: calcado.preco,
+      quantidadeEmEstoque: calcado.quantidadeEmEstoque,
+      categoria: calcado.categoria,
+      descricao: calcado.descricao
+    });
+
   }
+
 
   onSubmit() {
     this.service.save(this.form.value).subscribe(

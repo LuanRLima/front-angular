@@ -1,14 +1,14 @@
 export interface Calcado {
 
-  id: Number;
-  nome: String;
-  marca: String;
-  cor: String;
-  tamanho: String;
-  preco: Number
-  quantidadeEmEstoque: Number;
-  categoria: String;
-  descricao: String;
-  dataDeCriacao?: Date;
+  id: number;
+  nome: string;
+  marca: string;
+  cor: string;
+  tamanho: string;
+  preco: number
+  quantidadeEmEstoque: number;
+  categoria: string;
+  descricao: string;
+  dataDeCadastro?: Date;
 }
 

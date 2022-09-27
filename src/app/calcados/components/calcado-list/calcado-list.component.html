@@ -13,7 +13,7 @@
   </ng-container>
 
   <ng-container matColumnDef="nome">
-    <mat-header-cell *matHeaderCellDef> Categoria </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
     <mat-cell *matCellDef="let calcado"> {{ calcado.nome }} </mat-cell>
   </ng-container>
 
@@ -70,10 +70,12 @@
       <button mat-icon-button color="primary" arial-label="Editar Calçado">
         <mat-icon (click)="onEdit(calcado)">edit</mat-icon>
       </button>
-      <button mat-icon-button color="warn" arial-label="Editar Calçado">
-        <mat-icon>delete</mat-icon>
+      <button mat-icon-button color="warn" arial-label="Remover Calçado">
+        <mat-icon (click)="onRemove(calcado)">delete</mat-icon>
       </button>
     </mat-cell>
+
+
 
 
   </ng-container>

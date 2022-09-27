@@ -18,3 +18,25 @@ mat-card {
   align-items: center;
   justify-content: center;
 }
+
+//checkbox responsive 4 cloumns grid layout align left
+mat-checkbox {
+  display: inline-block;
+  width: 25%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+// mat-checkbox label align left
+
+mat-checkbox label {
+  font-size: 0.8em;
+}
+
+
+
+.mat-checkbox-layout {
+  display: flex;
+  text-align: left;
+}

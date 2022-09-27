@@ -6,28 +6,25 @@
   <mat-card-content class="min-width">
     <form [formGroup]="form">
       <mat-form-field class="full-width">
-        <input matInput placeholder="Nome" formControlName="nome">
+        <input matInput placeholder="Nome" required formControlName="nome">
       </mat-form-field>
       <mat-form-field class="full-width">
-        <input matInput placeholder="Marca" formControlName="marca">
+        <input matInput placeholder="Marca" required formControlName="marca">
       </mat-form-field>
       <mat-form-field class="full-width">
-        <input matInput placeholder="Cor" formControlName="cor">
+        <input matInput placeholder="Cor" required formControlName="cor">
       </mat-form-field>
       <mat-form-field class="full-width">
-        <input matInput placeholder="Tamanho" formControlName="tamanho">
+        <input matInput placeholder="Tamanho" type="number" required formControlName="tamanho">
       </mat-form-field>
       <mat-form-field class="full-width">
-        <input matInput placeholder="Preco" formControlName="preco">
+        <input matInput placeholder="Preco" required formControlName="preco">
       </mat-form-field>
       <mat-form-field class="full-width">
-        <input matInput placeholder="Quantidade" formControlName="quantidadeEmEstoque">
+        <input matInput placeholder="Quantidade" required formControlName="quantidadeEmEstoque">
       </mat-form-field>
       <mat-form-field class="full-width">
         <input matInput placeholder="Categoria" formControlName="categoria">
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <input matInput placeholder="Data de Cadastro" formControlName="dataDeCadastro">
       </mat-form-field>
       <mat-form-field class="full-width">
         <input matInput placeholder="Descricao" formControlName="descricao">

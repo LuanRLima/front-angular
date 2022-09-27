@@ -27,7 +27,7 @@ export class CalcadoResolver implements Resolve<Calcado> {
       preco: 0,
       quantidadeEmEstoque: 0,
       categoria: '',
-      descricao: '',
+      descricao: ''
     });
   }
 }

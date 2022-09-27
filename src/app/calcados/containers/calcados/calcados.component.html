@@ -3,9 +3,41 @@
     <span>Calcados</span>
   </mat-toolbar>
 
+
+
+  // form Group multiple filters in html
+
+  <form [formGroup]="form">
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Nome" formControlName="nome">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Marca" formControlName="marca">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Cor" formControlName="cor">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Tamanho" type="number" formControlName="tamanho">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Preco" formControlName="preco">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Quantidade" formControlName="quantidadeEmEstoque">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Categoria" formControlName="categoria">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Descricao" formControlName="descricao">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="onFilter()">Filter</button>
+  </form>
+
   <div class="column-flex mat-elevation-z8">
-    <app-calcado-list *ngIf="calcados$ | async as calcados; else loading" [calcados]="calcados" (add)="onAdd()" (edit)="onEdit($event)">
-    </app-calcado-list>
+    <app-calcado-list *ngIf="calcados$ | async as calcados; else loading" [calcados]="calcados" (add)="onAdd()" (edit)="onEdit($event)" (remove)="onRemove($event)"></app-calcado-list>
 
 
     <ng-template #loading>
