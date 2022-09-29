@@ -1,11 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { MatTableDataSource } from '@angular/material/table';
-import { Router, ActivatedRoute } from '@angular/router';
 
-import { COMMA, TAB, SPACE, ENTER } from '@angular/cdk/keycodes';
 import { Calcado } from '../../model/calcado';
-import { MatChipInputEvent } from '@angular/material/chips';
+
 
 
 export interface SearchItem {

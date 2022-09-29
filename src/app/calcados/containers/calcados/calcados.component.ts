@@ -97,7 +97,7 @@ export class CalcadosComponent implements OnInit {
       )
     );
   }
-  // onFilter transform para observable$ Calcado[] with tap
+
 }
 
 
