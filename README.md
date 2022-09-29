@@ -57,23 +57,15 @@ cadastro e descrição, os filtros podem ser combinados;
 envio dos arquivos deve ser via e-mail ou um link do repositório no GitHub. 
 
 Obs. Colocar print para exemplificar as telas de editar/cadastrar e listar
-## Ferramentas utilizadas
+## Ferramentas utilizadas Front-End
 
-<h3><a href="https://www.java.com"> Java - 11</a></h3>
-<h3><a href="https://junit.org/junit5"> Junit - 5</a></h3>
-<h3><a href="https://maven.apache.org"> Maven</a></h3>
-<h3><a href="https://site.mockito.org"> Mockito </a></h3>
-<h3><a href="https://www.testcontainers.org"> TestContainers </a></h3>
-<h3><a href="http://modelmapper.org"> Modelmapper</a></h3>
-<h3><a href="https://rest-assured.io"> Rest-Assured</a></h3>
-<h3><a href="https://spring.io/projects/spring-boot"> Spring boot </a></h3>
-<h3><a href="https://spring.io/projects/spring-data-jpa"> Spring data jpa</a></h3>
-<h3><a href="https://spring.io/projects/spring-ws"> Spring web</a></h3>
-<h3><a href="https://www.postgresql.org/"> PostgreSQL</a></h3>
-<h3><a href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html"> Java Doc</a></h3>
-<h3><a href="https://swagger.io/"> Swagger </a></h3>
-<h3><a href="https://www.java.com"> Angular</a></h3>
-<h3><a href="https://www.java.com"> Angular Material</a></h3>
+<h3><a href="https://angular.io/"> Angular</a></h3>
+<h3><a href="https://material.angular.io/"> Angular Material</a></h3>
+<h3><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML"> Html 5</a></h3>
+<h3><a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS"> Css 3</a></h3>
+<h3><a href="https://www.typescriptlang.org/"> Typescript</a></h3>
+<h3><a href="https://www.npmjs.com/"> Npm</a></h3>
+<h3><a href="https://nodejs.org/en/m"> Node</a></h3>
 
 ## [Projeto Front-End](https://github.com/LuanRLima/front-angular)
 
