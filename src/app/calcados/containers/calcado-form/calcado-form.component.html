@@ -6,25 +6,30 @@
   <mat-card-content class="min-width">
     <form [formGroup]="form">
       <mat-form-field class="full-width">
-        <input matInput placeholder="Nome" required formControlName="nome">
+        <input matInput placeholder="Nome" required minlength="1" formControlName="nome">
       </mat-form-field>
       <mat-form-field class="full-width">
-        <input matInput placeholder="Marca" required formControlName="marca">
+        <input matInput placeholder="Marca" required minlength="1" formControlName="marca">
       </mat-form-field>
       <mat-form-field class="full-width">
-        <input matInput placeholder="Cor" required formControlName="cor">
+        <input matInput placeholder="Cor" required minlength="1" formControlName="cor">
       </mat-form-field>
       <mat-form-field class="full-width">
-        <input matInput placeholder="Tamanho" type="number" required formControlName="tamanho">
+        <input matInput placeholder="Tamanho" type="number" required minlength="2" formControlName="tamanho">
       </mat-form-field>
       <mat-form-field class="full-width">
-        <input matInput placeholder="Preco" required formControlName="preco">
+        <input matInput placeholder="Preco" minlength="1" required formControlName="preco">
       </mat-form-field>
       <mat-form-field class="full-width">
-        <input matInput placeholder="Quantidade" required formControlName="quantidadeEmEstoque">
+        <input matInput placeholder="Quantidade" required min="1" formControlName="quantidadeEmEstoque">
       </mat-form-field>
-      <mat-form-field class="full-width">
-        <input matInput placeholder="Categoria" formControlName="categoria">
+      <mat-form-field class="full-width" required>
+        <mat-label>Categoria</mat-label>
+        <mat-select formControlName="categoria">
+          <mat-option *ngFor="let categoria of categorias" [value]="categoria.value">
+            {{categoria.viewValue}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
       <mat-form-field class="full-width">
         <input matInput placeholder="Descricao" formControlName="descricao">
@@ -34,7 +39,7 @@
   </mat-card-content>
 
   <mat-card-actions>
-    <button mat-raised-button color="primary" (click)="onSubmit()">Salvar</button>
+    <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="!form.valid">Salvar</button>
     <button mat-raised-button color="warn" (click)="onCancel()">Cancelar</button>
   </mat-card-actions>
   <mat-card-footer>

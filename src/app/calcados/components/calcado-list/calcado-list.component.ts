@@ -30,12 +30,6 @@ export class CalcadoListComponent implements OnInit {
     , "dataDeCadastro", "descricao", "actions"];
 
 
-
-
-
-
-
-
   constructor() { }
 
   ngOnInit(): void {

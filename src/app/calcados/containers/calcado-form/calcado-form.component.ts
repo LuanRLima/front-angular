@@ -4,8 +4,14 @@ import { NonNullableFormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { Calcado } from '../../model/calcado';
-
 import { CalcadosService } from '../../service/calcados.service';
+
+
+
+interface Categorias {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-calcado-form',
@@ -23,7 +29,7 @@ export class CalcadoFormComponent implements OnInit {
     tamanho: [''],
     preco: [0],
     quantidadeEmEstoque: [0],
-    categoria: [''],
+    categoria: ['TENIS'],
     descricao: ['']
   });
 
@@ -50,6 +56,7 @@ export class CalcadoFormComponent implements OnInit {
       preco: calcado.preco,
       quantidadeEmEstoque: calcado.quantidadeEmEstoque,
       categoria: calcado.categoria,
+
       descricao: calcado.descricao
     });
 
@@ -60,6 +67,8 @@ export class CalcadoFormComponent implements OnInit {
     this.service.save(this.form.value).subscribe(
       result =>
         this.onSuccess(), () => this.onError());
+    console.log(this.form.value);
+
     this.onCancel();
   }
   onCancel() {
@@ -74,5 +83,15 @@ export class CalcadoFormComponent implements OnInit {
   private onError() {
     this.snackBar.open('Erro ao salvar o calcado', 'OK', { duration: 3000 });
   }
+
+  categorias: Categorias[] = [
+    { value: "SAPATO", viewValue: 'Sapato' },
+    { value: "SANDALIA", viewValue: 'Sandália' },
+    { value: "TENIS", viewValue: 'Tênis' },
+    { value: "CHINELO", viewValue: 'Chinelo' },
+    { value: "BOTA", viewValue: 'Bota' }
+  ];
+
+
 
 }
