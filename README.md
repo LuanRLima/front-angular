@@ -1,3 +1,80 @@
+<h1 align="center"> QUESTÃO 03 - DESAFIO DE PROGRAMAÇÃO </h1>
+<p align="center">
+<img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
+</p>
+
+### Tópicos
+
+:small_blue_diamond:[Descrição do projeto](#descrição-do-projetp)
+
+:small_blue_diamond:[Ferramentas utilizadas](#ferramentas-utilizadas)
+
+:small_blue_diamond:[Pré-requisitos](#pre-requisitos)
+
+:small_blue_diamond:[Acesso ao projeto](#acesso-ao-projeto)
+
+:small_blue_diamond:[Abrir e rodar o projeto](#abrir-e-rodar-o-projeto)
+
+## Descrição do projeto
+
+<p align="justify">
+O projeto consiste em uma aplicação web que permite  um CRUD de calçados.
+Temos o bakcend em java com spring boot e o frontend em angular.
+
+</p>
+
+## Desafio
+
+### [Questão 03](https://github.com/LuanRLima/capgemini-academia-desafio-programacao/tree/master/questao_03):
+
+>Implementar uma aplicação na linguagem Java que seja capaz de inserir, editar, deletar e
+atualizar os cadastros de um calçado no banco, a aplicação deve ter uma interface.
+
+
+### Requisitos funcionais:
+
+2.1 - O banco de dados deve ter os seguintes campos:
+
+- Tamanho
+- Categoria
+- Cor
+- Preço
+- Marca
+- Data cadastro
+- Quantidade em estoque
+- Descrição.
+- 
+2.2 - Deve ser possível filtrar os calçados por tamanho, categoria, cor, preço, marca, data
+cadastro e descrição, os filtros podem ser combinados;
+
+2.3 - Desenvolver uma API para fazer o CRUD da mesma forma que interface executa;
+
+2.4 - Implementar teste unitário;
+
+2.5 - Utilizar linguagem de programação Java + Frameworks (se necessário);
+
+2.6 - O script de criação do banco deve ser enviado junto com a aplicação ao finalizar o teste. O
+envio dos arquivos deve ser via e-mail ou um link do repositório no GitHub. 
+
+Obs. Colocar print para exemplificar as telas de editar/cadastrar e listar
+## Ferramentas utilizadas
+
+<h3><a href="https://www.java.com"> Java - 11</a></h3>
+<h3><a href="https://junit.org/junit5"> Junit - 5</a></h3>
+<h3><a href="https://maven.apache.org"> Maven</a></h3>
+<h3><a href="https://site.mockito.org"> Mockito </a></h3>
+<h3><a href="https://www.testcontainers.org"> TestContainers </a></h3>
+<h3><a href="http://modelmapper.org"> Modelmapper</a></h3>
+<h3><a href="https://rest-assured.io"> Rest-Assured</a></h3>
+<h3><a href="https://spring.io/projects/spring-boot"> Spring boot </a></h3>
+<h3><a href="https://spring.io/projects/spring-data-jpa"> Spring data jpa</a></h3>
+<h3><a href="https://spring.io/projects/spring-ws"> Spring web</a></h3>
+<h3><a href="https://www.postgresql.org/"> PostgreSQL</a></h3>
+<h3><a href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html"> Java Doc</a></h3>
+<h3><a href="https://swagger.io/"> Swagger </a></h3>
+<h3><a href="https://www.java.com"> Angular</a></h3>
+<h3><a href="https://www.java.com"> Angular Material</a></h3>
+
 ## [Projeto Front-End](https://github.com/LuanRLima/front-angular)
 
 
